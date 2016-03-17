@@ -205,6 +205,8 @@ public interface IPhotoView {
      */
     void setOnLongClickListener(View.OnLongClickListener listener);
 
+    void setOnLongTouchListener(PhotoViewAttacher.OnLongTouchListener listener);
+
     /**
      * Register a callback to be invoked when the Matrix has changed for this View. An example would
      * be the user panning or scaling the Photo.

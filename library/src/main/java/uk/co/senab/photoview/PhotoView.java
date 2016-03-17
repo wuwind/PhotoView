@@ -220,6 +220,11 @@ public class PhotoView extends ImageView implements IPhotoView {
     }
 
     @Override
+    public void setOnLongTouchListener(PhotoViewAttacher.OnLongTouchListener listener) {
+        mAttacher.setOnLongTouchListener(listener);
+    }
+
+    @Override
     public void setOnPhotoTapListener(OnPhotoTapListener listener) {
         mAttacher.setOnPhotoTapListener(listener);
     }

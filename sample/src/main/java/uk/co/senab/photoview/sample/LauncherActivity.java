@@ -24,7 +24,7 @@ import android.widget.ListView;
 
 public class LauncherActivity extends ListActivity {
 
-    public static final String[] options = {"Simple Sample", "ViewPager Sample", "Rotation Sample", "Android Universal Image Loader"};
+    public static final String[] options = {"Simple Sample", "ViewPager Sample", "Rotation Sample", "Android Universal Image Loader","LongTouch Sample"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,9 @@ public class LauncherActivity extends ListActivity {
                 break;
             case 3:
                 c = AUILSampleActivity.class;
+                break;
+            case 4:
+                c = LongTouchActivity.class;
                 break;
         }
 

@@ -139,6 +139,7 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
     private OnPhotoTapListener mPhotoTapListener;
     private OnViewTapListener mViewTapListener;
     private OnLongClickListener mLongClickListener;
+    private OnLongTouchListener mLongTouchListener;
     private OnScaleChangeListener mScaleChangeListener;
 
     private int mIvTop, mIvRight, mIvBottom, mIvLeft;
@@ -180,6 +181,9 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
                     public void onLongPress(MotionEvent e) {
                         if (null != mLongClickListener) {
                             mLongClickListener.onLongClick(getImageView());
+                        }
+                        if (null != mLongTouchListener) {
+                            mLongTouchListener.onLongTouch(getImageView(), e);
                         }
                     }
                 });
@@ -576,6 +580,11 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
     @Override
     public void setOnLongClickListener(OnLongClickListener listener) {
         mLongClickListener = listener;
+    }
+
+    @Override
+    public void setOnLongTouchListener(OnLongTouchListener listener) {
+        mLongTouchListener = listener;
     }
 
     @Override
@@ -1007,6 +1016,15 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
          * @param y    - where the user tapped from the top of the View.
          */
         void onViewTap(View view, float x, float y);
+    }
+
+    /**
+     * Interface definition for a callback to be invoked when the ImageView is long-pressed.
+     *
+     * @author Chris Banes
+     */
+    public static interface OnLongTouchListener {
+        void onLongTouch(View view, MotionEvent event);
     }
 
     private class AnimatedZoomRunnable implements Runnable {
