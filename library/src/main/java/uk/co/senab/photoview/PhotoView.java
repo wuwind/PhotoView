@@ -98,6 +98,10 @@ public class PhotoView extends ImageView implements IPhotoView {
         return mAttacher.setDisplayMatrix(finalRectangle);
     }
 
+    public Matrix getScaleMatrix() {
+        return mAttacher.getScaleMatrix();
+    }
+
     @Override
     @Deprecated
     public float getMinScale() {

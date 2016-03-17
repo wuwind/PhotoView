@@ -149,7 +149,7 @@ public class SimpleSampleActivity extends Activity {
                     mAttacher.setDisplayMatrix(mCurrentDisplayMatrix);
                 return true;
             case R.id.menu_matrix_capture:
-                mCurrentDisplayMatrix = mAttacher.getDisplayMatrix();
+                mCurrentDisplayMatrix = mAttacher.getScaleMatrix();
                 return true;
             case R.id.extract_visible_bitmap:
                 try {

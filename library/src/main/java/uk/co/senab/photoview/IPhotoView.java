@@ -63,6 +63,14 @@ public interface IPhotoView {
     Matrix getDisplayMatrix();
 
     /**
+     * Gets the Display Matrix of the currently displayed Drawable. The Rectangle is considered
+     * relative to this View only scaling.
+     *
+     * @return - true if rectangle was applied successfully
+     */
+    Matrix getScaleMatrix();
+
+    /**
      * Use {@link #getMinimumScale()} instead, this will be removed in future release
      *
      * @return The current minimum scale level. What this value represents depends on the current
